@@ -1,0 +1,327 @@
+@import "fonts";
+@import "libs";
+@import "vars";
+@import "base";
+@import url('https://fonts.googleapis.com/css?family=Lato:100,400,400i,700|Raleway:700');
+
+.section {
+	padding: 110px	0;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+.img {
+	max-width: 100%;
+	height: auto;
+}
+.title {
+	font-family: 'Raleway', sans-serif;
+	font-size: 48px;
+	line-height: 1.25;
+	margin: 0;
+	text-align: center;
+	font-weight: bold;
+	text-transform: uppercase;
+	position: relative;
+	&::after {
+		content: "";
+		width: 90px;
+		height: 1px;
+		position: absolute;
+		bottom: -50px;
+		left: 50%;
+		transform: translate(-50%, 0);
+		background: #fff;
+	}
+}
+	
+.site-header {
+	min-height: 100vh;
+	background-color: #00476B;
+	background: url("../img/bg-header.jpg") center no-repeat;
+	background-size: cover;	
+}
+
+.h-top {
+	padding: 50px 0 0;
+	&__logo {
+		display: block;
+		overflow: hidden;
+		line-height: 60px;
+	}
+	&__img {
+		@extend .img;
+	}
+	&__nav {
+		list-style: none;
+		padding: 0;
+		text-align: right;
+	}
+	&__item {
+		display: inline-block;
+		overflow: hidden;
+		&:not(:last-of-type) {
+			margin-right: 50px;
+		}
+	}
+	&__link {
+		display: block;
+		text-transform: uppercase;
+		font-size: 14px;
+		white-space: nowrap;
+		max-width: 90px;
+		color: #fff;
+		&:hover, &:active, &:focus, &_active {
+			text-decoration: underline;
+			color: #fff;
+		}
+	}
+}
+
+.h-title {
+	text-align: center;
+	margin-top: 120px;
+	&__title {
+		@extend .title;
+	}
+	&__text {
+		display: inline-block;
+		margin-top: 100px;
+		line-height: 1.36;
+		font-size: 22px;
+		width: 605px;
+	}
+}
+
+.h-arrow {
+	display: inline-block;
+	position: absolute;
+	bottom: 47px;
+	left: 50%;
+	transform: translate(-50%, 0);
+	&:hover {
+		transform: scale(1.05) translate(-50%, 0);
+	}
+	&__img {
+		@extend .img;
+	}
+}
+
+.s-services {
+	color: $accent;
+	&__title {
+		@extend .title;
+		&::after {
+			background-color: $accent;
+		}
+	}
+	&__card {
+		margin-top: 145px;
+		text-align: center;
+	}
+	&__c-img-wrap {
+		overflow: hidden;
+		height: 155px;
+	}
+	&__img {
+		@extend .img;
+	} 
+	&__c-title {
+		font-size: 24px;
+		line-height: 1;
+		margin: 35px 0 40px;
+	}
+	&__c-text {
+		margin: 0;
+		font-size: 16px;
+		line-height: 1.875;
+	}
+}
+
+.s-baner {
+	padding-top: 165px;
+	background-color: #1C1C1C;
+	background-image: url('../img/iphone.png'), 
+										url('../img/bg2.jpg');
+	background-size: 15%, cover;
+	background-position: right 315px bottom, center center;
+	&__title {
+		text-transform: uppercase;
+		font-size: 45px;
+		letter-spacing: 1px;
+		line-height: 1.8;
+		font-weight: 400;
+		margin: 0;
+	}
+	&__text {
+		margin: 0 0 60px;
+		font-size: 22px;
+		line-height: 1.27;
+		font-weight: 100;
+	}
+	&__link {
+		color: #fff;
+		font-size: 18px;
+		text-decoration: underline;
+		cursor: pointer;
+		&:hover {
+			text-decoration: none;
+			color: #fff;
+		}
+	}
+}
+
+.s-work {
+	&__title {
+		@extend .title;
+		color: $accent;
+		&::after {
+			background: $accent;
+		}
+	}
+	&__card {
+		display: block;
+		position: relative;
+		max-height: 420px;
+		margin-top: 140px;
+		margin-bottom: 80px;
+		&:hover .s-work__fon {
+			opacity: 1;
+			color: #fff;
+		}
+	}
+	&__img {
+		@extend .img;
+	}
+	&__fon {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		padding: 0 25px;
+		background: rgba(0, 0, 0, 0.7);
+		transition: all 0.5s;
+		opacity: 0;
+		&-title {
+			text-transform: uppercase;
+			overflow: hidden;
+			text-align: center;
+			font-weight: 400;
+			font-size: 22px;
+			line-height: 1.5;
+			max-height: 100px;
+		}
+		&-img {
+		
+		}
+	}
+	&__btn {
+		display: block;
+		border: 3px solid #000;
+		text-transform: uppercase;
+		color: $accent;
+		background: transparent;
+		text-align: center; 
+		font-size: 24px;
+		line-height:0 2.5;
+		transition: all 0.3s;
+		overflow: hidden;
+		max-height: 50px;
+		&:hover, &:focus {
+			text-decoration: none;
+			color: $accent;
+			border-color: transparent;
+			background: rgba(0, 0, 0, .3);
+		}
+		&:active {
+			color: $accent;
+			transform: scale(0.95);
+		}
+	}
+}
+
+.s-footer {
+	background-color: #041012;
+	background-image: url('../img/bg-footer.jpg');
+	&__title {
+		@extend .title;
+	}
+	&__icons {
+		margin-top: 120px;
+		text-align: center;
+		list-style: none;
+		padding: 0;
+	}
+	&__item {
+		display: inline-block;
+		&:not(:last-of-type) {
+			margin-right: 30px;
+		}
+	}
+	&__link {
+		display: block;
+		width: 27px;
+		height: 27px;
+		overflow: hidden;
+		border: 2px solid transparent;
+		line-height: 1.5;		border-radius: 50%;
+		padding: 7px;
+		box-sizing: content-box; 
+		transition: all .3s;
+		&:hover {
+			border-color: #fff;
+		}
+	}
+	&__img {
+		vertical-align: bottom;
+		@extend .img;
+	}
+	&__form {
+	text-align: center;
+	margin-top: 75px;
+	}
+	&__input {
+		display: inline-block;
+		background: transparent;
+		border: none;
+		width: 305px;
+		outline: none;
+		padding: 15px 25px;
+		border-bottom: 2px solid #B0B0B0;
+		&:first-of-type {
+			margin-right: 60px;
+		}
+		&:last-of-type {
+			margin-top: 100px;
+			margin-bottom: 50px;
+		}
+		&_block {
+			width: 675px;
+		}
+		&::placeholder {
+			font-size: 18px;
+			font-style: italic;
+		}
+	}
+	&__btn {
+		@extend .s-work__btn;
+		display: inline-block;
+		width: 185px;
+		border-color: #fff;
+		color: #fff;
+		&:hover, &:focus {
+			color: #fff;
+			background: rgba(255, 255, 255, .3);
+		}
+		&:active {
+			color: #fff;
+		}
+	}
+}
+
+@import "media"; // Всегда в конце
